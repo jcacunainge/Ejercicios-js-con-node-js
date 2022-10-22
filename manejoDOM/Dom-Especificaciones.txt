@@ -1,0 +1,11 @@
+document.getElementById(‘id’) 
+selecciona el elemento por el id
+
+document.getElementsByClassName(‘clase’) 
+retorna un arreglo de los elementos por el nombre de la clase
+
+document.getElementsByTagName(‘tag’) 
+retorna un arreglo de los elementos por el nombre del tag
+
+document.querySelectorAll(“selector”) 
+regresa todos los elementos con el mismo nombre

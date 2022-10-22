@@ -11,7 +11,7 @@ const createTask = (evento) => {
     input.value = "";
     const content = `
     <div>
-        <i class="far fa-check-square icon"></i>
+        ${checkComplete()}
         <span class="task">${value}</span>
     </div>
     <i class="fas fa-trash-alt trashIcon icon"></i>`;
@@ -19,8 +19,14 @@ const createTask = (evento) => {
     list.appendChild(task);
     console.log(content);   
 }
-
 console.log(btn);
 btn.addEventListener("click", createTask);
-;
+
+const checkComplete = () => {
+    const i = document.createElement("i");
+    i.classList.add("far");
+    i.classList.add("fa-check-square");
+    i.classList.add("icon");
+    return i;
+};
 

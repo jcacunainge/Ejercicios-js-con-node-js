@@ -27,7 +27,7 @@ form {
 }
 
 .mainCard {
-  width: 40vw;
+  width: 50vw;
   border-radius: 25px;
   background-color: #fff;
   padding: 25px;
@@ -46,7 +46,7 @@ form {
   padding: 10px;
   border: 1px solid #eee;
   outline: none;
-  width: 65%;
+  width: 40%;
 }
 
 .inputForm::placeholder {

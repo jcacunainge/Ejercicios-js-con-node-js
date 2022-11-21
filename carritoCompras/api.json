@@ -34,6 +34,19 @@
       "id": 6,
       "title": "Chela",
       "thumbnailUrl": "https://picsum.photos/id/50/600"
+    },
+    {
+      "precio": 110,
+      "id": 7,
+      "title": "Fresa",
+      "thumbnailUrl": "https://picsum.photos/id/60/600"
+    },
+    {
+      "precio": 250,
+      "id": 8,
+      "title": "Frutas",
+      "thumbnailUrl": "https://picsum.photos/id/70/600"
     }
+    
   ]
   

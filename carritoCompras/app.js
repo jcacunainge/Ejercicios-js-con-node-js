@@ -1,7 +1,14 @@
 //Paso numero 1
-const items = document.getElementById("items");
+const cards = document.getElementById("cards");
 const templateCard = document.getElementById("template-card").content;
 const fragment = document.createDocumentFragment(); //Memoria volatil
+
+//Agregar template de carrito y footer 
+const templateCarrito = document.getElementById("template-carrito").content;
+const templateFooter = document.getElementById("template-footer").content;
+const items = document.getElementById("items");
+const footer = document.getElementById("footer");
+
 
 //Creamos el let carrito para ir llenandolo poco a poco
 let carrito = {};
@@ -10,10 +17,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
     fetchData();
 });
 
-// para que los items o elementos dectecten el clik cuarto paso
-items.addEventListener("click", e =>{
+// para que los cards o elementos dectecten el clik cuarto paso
+cards.addEventListener("click", e =>{
     addCarrito(e);
-})
+});
 
 
 //Funcion para conectarse al json , paso numero dos
@@ -41,12 +48,11 @@ const pintarCards = data =>{
        
         const clone = templateCard.cloneNode(true)
         fragment.appendChild(clone)
-
     });
 
-    //Pasamos el fragmen al items, que es nuestro contenedor...
-    items.appendChild(fragment);
-} 
+    //Pasamos el fragmen al cards, que es nuestro contenedor...
+    cards.appendChild(fragment);
+};
 
 //Paso cinco, para saber si el elemento al que le damos clik contiene la clase que queremos
 //Para buscar la clase del botom
@@ -58,11 +64,11 @@ const addCarrito = e =>{
         //console.log(e.target.parentElement) //compramos lo que selecionamos
         //Metemos toda la informacion en 
         setCarrito(e.target.parentElement)
-    }
+    };
 
-    //Para detener cualquier otro evento en nuestros items
-    e.stopPropagation()
-}
+    //Para detener cualquier otro evento en nuestros cards
+    e.stopPropagation();
+};
 
 //Paso 7 para seleccinar todos mis elementos y crearlo de forma de un objeto
 const setCarrito = objeto =>{
@@ -89,6 +95,17 @@ const setCarrito = objeto =>{
     //console.log(producto)
 
     //Mostrar el carrito con los productos agregados
-    console.log(carrito)
-    
+    //console.log(carrito);
+}
+
+//Pintar carrito en nuestro documento
+
+const pintarCarrito = () =>{
+    objeto.values(carrito).forEach(producto => {
+        templateCarrito.querySelector("th").textContent = producto.id;
+        templateCarrito.querySelectorAll("td")[0].textContent = producto.cantidad;
+        templateCarrito.querySelector(".btn-info").dataset.id = producto.id;
+        templateCarrito.querySelector(".btn-danger").dataset.id = producto.id;
+
+    });
 }

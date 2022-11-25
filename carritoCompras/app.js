@@ -22,6 +22,9 @@ cards.addEventListener("click", e =>{
     addCarrito(e);
 });
 
+//Funciones de los botones aumentar y disminuir 
+items.addEventListener('click', e => { btnAumentarDisminuir(e) })
+
 
 //Funcion para conectarse al json , paso numero dos
 const fetchData = async () => {
@@ -85,12 +88,12 @@ const setCarrito = objeto =>{
     };
     //Si el producto existe, se le suma uno 
     if (carrito.hasOwnProperty(producto.id)){
-        producto.cantidad = carrito[producto.id].cantidad +1
+        producto.cantidad = carrito[producto.id].cantidad + 1
     };
     //Esplicacion Carrito, nuestro elemento
 
-    carrito[producto.id] ={...producto};
-    
+    carrito[producto.id] ={ ...producto};
+    pintarCarrito();
     //Mostrar el producto con sus elementos.
     //console.log(producto)
 
@@ -98,14 +101,85 @@ const setCarrito = objeto =>{
     //console.log(carrito);
 }
 
-//Pintar carrito en nuestro documento
-
-const pintarCarrito = () =>{
-    objeto.values(carrito).forEach(producto => {
+//Pintar carrito en nuestro documento, paso 8
+const pintarCarrito = () => {
+    //console.log(carrito)
+    items.innerHTML="";
+    Object.values(carrito).forEach(producto => {
+        //Selecionamos mediante DOOM el th 
         templateCarrito.querySelector("th").textContent = producto.id;
-        templateCarrito.querySelectorAll("td")[0].textContent = producto.cantidad;
+        templateCarrito.querySelectorAll("td")[0].textContent = producto.title;
+        templateCarrito.querySelectorAll("td")[1].textContent = producto.cantidad;
         templateCarrito.querySelector(".btn-info").dataset.id = producto.id;
         templateCarrito.querySelector(".btn-danger").dataset.id = producto.id;
+        templateCarrito.querySelector("span").textContent = producto.cantidad * producto.precio;
 
+        const clone = templateCarrito.cloneNode(true);
+        fragment.appendChild(clone);
     });
+    items.appendChild(fragment);
+    pintarFooter();
+//Pintar footer, o total de compra, y demas 
+
+};
+
+const pintarFooter = () => {
+    //Iniciamos con nuestro footer vacio 
+    footer.innerHTML = ''
+    
+    if (Object.keys(carrito).length === 0) {
+        footer.innerHTML = `
+        <th scope="row" colspan="5">Carrito vacío con innerHTML</th>
+        `
+        return
+    }
+    
+    // sumar cantidad y sumar totales ultimo paso
+    const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0);
+    const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0);
+    // console.log(nPrecio)
+
+    //Obtener mediante del DOOM en el template el sitio donde vamos a colocar nuestras cantidades     
+    templateFooter.querySelectorAll('td')[0].textContent = nCantidad;
+    templateFooter.querySelector('span').textContent = nPrecio;
+
+    //Clonamos y agregamos
+    const clone = templateFooter.cloneNode(true);
+    fragment.appendChild(clone);
+
+    footer.appendChild(fragment);
+
+    //Accedemos mediante DOOM el botom 
+    const boton = document.querySelector('#vaciar-carrito')
+    //Escuchamos al botom cuando e le de click
+    boton.addEventListener('click', () => {
+        //carrito vacio
+        carrito = {}
+        //Volvemos a pintar el carrito
+        pintarCarrito()
+    });
+
+};
+
+const btnAumentarDisminuir = e => {
+    // console.log(e.target.classList.contains('btn-info'))
+
+    if (e.target.classList.contains('btn-info')) {
+        const producto = carrito[e.target.dataset.id]
+        producto.cantidad++
+        carrito[e.target.dataset.id] = { ...producto }
+        pintarCarrito()
+    }
+
+    if (e.target.classList.contains('btn-danger')) {
+        const producto = carrito[e.target.dataset.id]
+        producto.cantidad--
+        if (producto.cantidad === 0) {
+            delete carrito[e.target.dataset.id]
+        } else {
+            carrito[e.target.dataset.id] = {...producto}
+        }
+        pintarCarrito()
+    }
+    e.stopPropagation()
 }

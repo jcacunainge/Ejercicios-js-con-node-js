@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const numero = parseInt(prompt("ingresa tu nombre"))
+        for (let i = 0; i < numero; i++) {
+            const parrafo = i * i;
+            console.log(parrafo)
+        }
+            
+// //   console.log('Texto a imprimir');}
+function repetirTexto(){
+    const numero = parseInt(prompt("ingresa tu nombre"))
+    let cadena = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi laboriosam aliquam veritatis similique possimus deleniti blanditiis quaerat sint, quos cum praesentium quasi ut itaque magni reprehenderit natus, nam voluptatibus fugit. Lorem, ipsum dolor sit amet consectetur adipisicing elit"
+    let cadenaRepetida = cadena.repeat(numero);
+    document.write("<br>",cadenaRepetida, "<br>")
+    
+}
+// repetirTexto()
+
+
+    </script>
+</body>
+</html>

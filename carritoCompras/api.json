@@ -1,52 +1,69 @@
 [
     {
-      "precio": 500,
+      "precio": 35000,
+      "descripcion": "Langosta al carbon, con queso mosarella, enzalada cesar y papas fritas.",
       "id": 1,
-      "title": "Café",
-      "thumbnailUrl": "https://picsum.photos/id/0/600"
+      "title": "Langosta gratinada",
+      "thumbnailUrl": "https://img-global.cpcdn.com/recipes/recipes_634_v1393305235_foto_foto_00000269/1200x630cq70/photo.jpg"
     },
     {
-      "precio": 300,
+      "precio": 3000,
+      "descripcion": "Camarones al vapor con salsa de verduras acompañado de arroz blanco o de coco",
       "id": 2,
-      "title": "Pizza",
-      "thumbnailUrl": "https://picsum.photos/id/10/600"
+      "title": "Arroz de camarones",
+      "thumbnailUrl": "https://camaroneros.info/wp-content/uploads/arroz-camarones-chorizo.jpg"
+      
     },
     {
-      "precio": 100,
+      "precio": 40000,
+      "descripcion": "Mariscos cocinados al vapor con crema de leche, pimenton y aceite de oliva",
       "id": 3,
-      "title": "Agua",
-      "thumbnailUrl": "https://picsum.photos/id/20/600"
+      "title": "Cazuela de mariscos",
+      "thumbnailUrl": "https://www.goya.com/media/4126/cazuela-de-mariscos_spanish-style-shellfish-stew.jpg?quality=80"
     },
     {
-      "precio": 50,
+      "precio": 12000,
+      "descripcion": "Maracuya, Mora, Fresa, Lulo, Fraijoba, Bebida en agua o leche",
       "id": 4,
-      "title": "Sandía",
-      "thumbnailUrl": "https://picsum.photos/id/30/600"
+      "title": "Jugos naturales",
+      "thumbnailUrl": "https://k-listo.com/wp-content/uploads/2020/04/JUGOS_NATURALES.jpg"
     },
     {
-      "precio": 10,
+      "precio": "24000",
+      "descripcion": "60 ml de ron Havana, 100ml de jugo de piña , con 30ml de leche de cocinados,ml de jugo de lima y una taza de hielo",
       "id": 5,
-      "title": "Mango",
-      "thumbnailUrl": "https://picsum.photos/id/40/600"
+      "title": "Piña colada",
+      "thumbnailUrl": "https://www.goya.com/media/6962/pina-colada.png?quality=80"
     },
     {
-      "precio": 150,
+      "precio": "24000",
+      "descripcion": "Margarita, mojito, Gintonic , Caipirinha, Manhattan, Daiquiri, Long Island, Bloody Mary, Sex on the beach",
       "id": 6,
-      "title": "Chela",
-      "thumbnailUrl": "https://picsum.photos/id/50/600"
+      "title": "Coteleria",
+      "thumbnailUrl": "https://www.excelenciasgourmet.com/sites/default/files/styles/slideshow_large/public/2018-06/cocteleria%20molecular.jpg?itok=H9yiBn9R"
     },
     {
-      "precio": 110,
+      "precio": "3000",
+      "descripcion": "Muffins de chocolate, arequipe, mora, Galletas de avena y chocolate",
       "id": 7,
-      "title": "Fresa",
-      "thumbnailUrl": "https://picsum.photos/id/60/600"
+      "title": "Dulce de casa",
+      "thumbnailUrl": "https://unareceta.com/wp-content/uploads/2017/06/receta-de-muffins-con-pepitas-de-chocolate.jpg"
     },
     {
-      "precio": 250,
+      "precio": 17500,
+      "descripcion": "Todos los batidos van con leche y crema chantilli , Frutos rojos, frutos tropicalesy banano",
       "id": 8,
-      "title": "Frutas",
-      "thumbnailUrl": "https://picsum.photos/id/70/600"
+      "title": "Postres cremosos",
+      "thumbnailUrl": "https://st2.depositphotos.com/1794701/7677/i/450/depositphotos_76776671-stock-photo-fruit-smoothies.jpg"
+    },
+    {
+      "precio": "8000",
+      "descripcion": "Tortas fitness con leche descremada y harina integral, lunes, miercoles, viernes y sabado de  zanahoria, Martes, Jueves, Domingo torta de platano",
+      "id": 8,
+      "title": "Tortas",
+      "thumbnailUrl": "https://media-cdn.tripadvisor.com/media/photo-s/04/16/08/75/pasteleria-tortas-de.jpg"
     }
+
     
   ]
   

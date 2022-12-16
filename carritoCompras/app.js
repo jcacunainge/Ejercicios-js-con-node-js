@@ -3,6 +3,7 @@ const cards = document.getElementById("cards");
 const templateCard = document.getElementById("template-card").content;
 const fragment = document.createDocumentFragment(); //Memoria volatil
 
+
 //Agregar template de carrito y footer 
 const templateCarrito = document.getElementById("template-carrito").content;
 const templateFooter = document.getElementById("template-footer").content;
@@ -46,9 +47,10 @@ const pintarCards = data =>{
 
         templateCard.querySelector('img').setAttribute("src", producto.thumbnailUrl); //Agregamos la imagen
         templateCard.querySelector('h5').textContent = producto.title; //Agregamos los titulos
+        templateCard.querySelector('a').textContent = producto.descripcion;
         templateCard.querySelector('p').textContent = producto.precio; //Agregamos los precios
         templateCard.querySelector('.btn-dark').dataset.id = producto.id; //Agregamos el botom de compra, con el respectivo id del producto
-       
+        templateCard.querySelector('.descripcion')
         const clone = templateCard.cloneNode(true)
         fragment.appendChild(clone)
     });
